@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="840.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="394.0" />
+          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="0.0" prefWidth="3.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="390.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="invSystemTitle" text="Inventory Management System">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="partSearchBar" onAction="#onPartSearch" promptText="Search by Part ID or Name" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="180.0" right="25.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="allPartsTable" minWidth="385.0" prefHeight="200.0" prefWidth="385.0" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn fx:id="partIDCol" prefWidth="75.0" sortType="DESCENDING" text="Part ID" />
+                <TableColumn fx:id="partNameCol" prefWidth="100.0" text="Part Name" />
+                  <TableColumn fx:id="partInvCol" prefWidth="120.0" text="Inventory Level" />
+                  <TableColumn fx:id="partUnitPriceCol" prefWidth="110.0" text="Price Per Unit" />
+              </columns>
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </TableView>
+            <Label fx:id="partsLabel" text="Parts" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="addPartBtn" mnemonicParsing="false" onAction="#onAddPart" text="Add">
+                     <HBox.margin>
+                        <Insets left="180.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="modPartBtn" mnemonicParsing="false" onAction="#onModPart" text="Modify">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="delPartBtn" mnemonicParsing="false" onAction="#onDelPart" text="Delete">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="productsLabel" text="Products" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="productSearchBar" layoutX="130.0" layoutY="39.0" onAction="#onProductSearch" promptText="Search by Product ID or Name" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="180.0" right="25.0" />
+               </GridPane.margin>
+            </TextField>
+            <TableView fx:id="allProductsTable" layoutX="10.0" layoutY="58.0" minWidth="395.0" prefHeight="200.0" prefWidth="395.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <columns>
+                  <TableColumn fx:id="productIDCol" prefWidth="75.0" sortType="DESCENDING" text="Product ID" />
+                  <TableColumn fx:id="productNameCol" prefWidth="100.0" text="Product Name" />
+                  <TableColumn fx:id="productInvCol" prefWidth="120.0" text="Inventory Level" />
+                  <TableColumn fx:id="productUnitPriceCol" prefWidth="110.0" text="Price Per Unit" />
+               </columns>
+               <GridPane.margin>
+                  <Insets left="5.0" right="10.0" />
+               </GridPane.margin>
+            </TableView>
+            <HBox layoutX="10.0" layoutY="352.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="addProductBtn" mnemonicParsing="false" onAction="#onAddProduct" text="Add">
+                     <HBox.margin>
+                        <Insets left="180.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="modProductBtn" mnemonicParsing="false" onAction="#onModProduct" text="Modify">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="delProductBtn" mnemonicParsing="false" onAction="#onDelProduct" text="Delete">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="exitProgram" mnemonicParsing="false" onAction="#onExitProgram" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="366.0" top="15.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
