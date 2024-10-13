@@ -1,0 +1,1 @@
+This application features an interactive UI for a user to manage inventory products and associated parts by adding, modifying, and deleting items.  It includes validation to ensure inventory meets min and max requirements.  App is built with Java and JavaFX (FXML) and utilizes MVC pattern to organize and separate concerns.
